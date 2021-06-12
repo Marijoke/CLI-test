@@ -144,7 +144,7 @@
                 <div class="edit-buttons col s12">
                     <!-- This if statement was created to allow only the user who created the list be able to edit or delete it -->
                     {% if session.user|lower == list.created_by|lower %}
-                        <a class="green darken-3 white-text" href="{{ url_for('best_books', username=session['user']) }}">
+                        <a class="green darken-3 white-text" href="{{ url_for('book_shelf', username=session['user']) }}">
                             Done <i class="fas fa-check white-text"></i>
                         </a>
                         <a id="edit-list" class="blue darken-3 white-text">Edit <i class="fas fa-edit white-text"></i></a>

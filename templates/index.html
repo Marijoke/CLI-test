@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <!-- Intro Text -->
+    <div class="intro-text white-text">
+	    <h2>Welcome home</h2>
+        <p>
+            Whether you like your books physical or digital keep track in your All booked account.
+            Store and review your favorite books but don't forget to share your great taste in literature with other All bookers (Ab's) in The Book Shelf.
+        </p>
+        <br>
+        <p>
+            Find your next book or help someone else find theirs. Login or register now to get All booked.
+        </p>
+        {% if not user %}
+            <a class="sign-up indigo-text" href="{{ url_for('sign_up') }}">Sign Up</a>
+        {% endif %}
+    </div>
+    <img class="intro-img hide-on-small-only" src="static/images/read.png" alt="Man on top of books changing a lamp that represents the world">
+{% endblock %}

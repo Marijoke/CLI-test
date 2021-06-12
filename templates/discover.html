@@ -7,10 +7,10 @@
                 <form action="{{ url_for('search') }}" method="post" >
                     <input id="search" name="query" type="text" placeholder="Search:" required>
                     <button type="submit">
-                        <i class="fas fa-search deep-purple white-text"></i>
+                        <i class="fas fa-search deep-orange darken-3 white-text"></i>
                     </button>
                     <a href="{{ url_for('discover') }}">
-                        <i class="fas fa-redo-alt deep-purple white-text"></i>
+                        <i class="fas fa-redo-alt deep-orange darken-3 white-text"></i>
                     </a>
                 </form>
             </div> 
@@ -18,12 +18,12 @@
 
         <!-- List of books -->
         <div class="container-discover row">
-            {% if book_lists|length > 0 %}
+            {% if book_in_lists|length > 0 %}
             <ul class="col s12 m10 offset-m1 l8 offset-l2">
-                {% for list in book_lists %}
+                {% for list in book_in_lists %}
                     {% if list.share_list == "on" %}
                         <li>
-                            <div class="list-title white-text deep-purple lighten-1">
+                            <div class="list-title white-text deep-orange darken-3">
                                 <div>
                                     <i class="valign-wrapper fas fa-angle-right"></i>
                                     <a class="white-text" href="{{ url_for('view_list', list_name=list._id) }}">

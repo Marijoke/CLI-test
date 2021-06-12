@@ -31,11 +31,11 @@
                 </div>
 
                 <!-- Add field button-->
-                <a class="btn green darken-3 white-text add-field-button">Add Vendor</a>
+                <a class="deep-orange darken-3 white-text add-field-button">Add Vendor</a>
 
                 <!-- Submit Button -->
                 <div class="row">
-                    <button type="submit" class="btn-sign-up white-text deep-purple">Save  <i class="fas fa-save white-text"></i></button>
+                    <button type="submit" class="btn-sign-up white-text deep-orange darken-3">Save  <i class="fas fa-save white-text"></i></button>
                 </div>
             </form>
             <!-- Close Modal -->
@@ -71,7 +71,7 @@
 
                     <!-- Submit Button -->
                     <div class="row">
-                        <button type="submit" class="btn-sign-up white-text deep-purple">Save  <i class="fas fa-save white-text"></i></button>
+                        <button type="submit" class="btn-sign-up white-text deep-orange darken-3">Save  <i class="fas fa-save white-text"></i></button>
                     </div>
                 </form>
             </div>
@@ -96,16 +96,16 @@
         
 	<div class="general-container row">
         {% if session.user|lower == list.created_by|lower %}
-            <button id="add-book"><i class="fas fa-plus-circle deep-purple-text"></i></button>
+            <button id="add-book"><i class="fas fa-plus deep-orange-text text-darken-3"></i></button>
         {% endif %}
         
         <div class="container-logos">
-            <a href="{{ url_for('index') }}"><h3 class="deep-purple-text logo">books'<span class="black-text">world</span></h3></a>
+            <a href="{{ url_for('index') }}"><h3 class="white-text logo">All booked</h3></a>
         </div>
             
         <div class="container-book-lists row">
             
-            <div class="col s12 center-align deep-purple-text">
+            <div class="col s12 center-align deep-orange-text text-darken-3">
                 <h1>{{ list.list_name }}</h1>
                 <!-- The user who created the list does not need to see their name, because they know who created it  -->
                 {% if session.user|lower != list.created_by|lower %}
@@ -144,13 +144,13 @@
                 <div class="edit-buttons col s12">
                     <!-- This if statement was created to allow only the user who created the list be able to edit or delete it -->
                     {% if session.user|lower == list.created_by|lower %}
-                        <a class="green darken-3 white-text" href="{{ url_for('book_shelf', username=session['user']) }}">
+                        <a class="deep-orange darken-3 white-text" href="{{ url_for('book_shelf', username=session['user']) }}">
                             Done <i class="fas fa-check white-text"></i>
                         </a>
-                        <a id="edit-list" class="blue darken-3 white-text">Edit <i class="fas fa-edit white-text"></i></a>
-                        <a id="delete-book" class="red darken-2 white-text">Delete <i class="fas fa-trash-alt white-text"></i></a>
+                        <a id="edit-list" class="deep-orange darken-3 white-text">Edit <i class="fas fa-edit white-text"></i></a>
+                        <a id="delete-book" class="deep-orange darken-3 white-text">Delete <i class="fas fa-trash-alt white-text"></i></a>
                     {% else %}
-                        <a class="green darken-3 white-text" href="{{ url_for('discover') }}">
+                        <a class="deep-orange darken-3 white-text" href="{{ url_for('discover') }}">
                             Done <i class="fas fa-check white-text"></i>
                         </a>
                     {% endif %} 

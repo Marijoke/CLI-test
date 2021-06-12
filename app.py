@@ -293,16 +293,16 @@ def delete_book_in_list(list_name, book_id):
 # Render Discover page
 @app.route("/discover")
 def discover():
-    book_lists = list(mongo.db.book_lists.find())
-    return render_template("discover.html", book_lists=book_lists)
+    book_in_list = list(mongo.db.book_in_list.find())
+    return render_template("discover.html", book_in_list=book_in_list)
 
 
 # Search function
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
-    book_lists = list(mongo.db.book_lists.find({"$text": {"$search": query}}))
-    return render_template("discover.html", book_lists=book_lists)
+    book_in_list = list(mongo.db.book_in_list.find({"$text": {"$search": query}}))
+    return render_template("discover.html", book_in_list=book_in_list)
 
 
 # Logout

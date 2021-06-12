@@ -2,10 +2,10 @@
 {% block content %}
 	<div class="general-container row">
         <div class="container-logos">
-            <a href="{{ url_for('index') }}"><h3 class="deep-purple-text logo">books'<span class="black-text">world</span></h3></a>
+            <a href="{{ url_for('index') }}"><h3 class="white-text logo">All booked</h3></a>
         </div>
 
-		<div class="container-login col s12 m8 offset-m2 l6">
+		<div class="container-login">
 			<div class="row">
 				<form class="col s12 l8 offset-l2" method="POST" action="{{ url_for('sign_up') }}" >
 					<div>
@@ -13,7 +13,7 @@
 						<!-- Username -->
                         <div class="row">
                             <div class="input-field col s12">
-                                <i class="fas fa-user-plus prefix deep-purple-text"></i>
+                                <i class="fas fa-user-plus prefix light-blue-text text-darken-2"></i>
                                 <input id="username" name="username" type="text" class="validate" minlength="5" maxlength="15"
                                     pattern="^[a-zA-Z0-9]{5,15}$" required>
                                 <label for="username">Username</label>
@@ -23,7 +23,7 @@
 						<!-- Password -->
                         <div class="row">
                             <div class="input-field col s12">
-                                <i class="fas fa-user-lock prefix deep-purple-text"></i>
+                                <i class="fas fa-user-lock prefix light-blue-text text-darken-2"></i>
                                 <input id="password" name="password" type="password" class="validate" minlength="5" maxlength="15"
                                     pattern="^[a-zA-Z0-9]{5,15}$" required>
                                 <label for="password">Password</label>
@@ -31,19 +31,15 @@
                         </div>
 
 						<!-- Submit Button -->
-                        <button type="submit" class="btn-sign-up white-text deep-purple">
+                        <button type="submit" class="btn-sign-up white-text deep-orange darken-3">
                             Sign Up <i class="fas fa-sign-in-alt white-text"></i>
                         </button>
 					</div>
 				</form>
 			</div>
 		</div>
-
-		<div class="container-ilustration col m6 hide-on-med-and-down">
-            <img src="static/images/sign_up.png" alt="Illustration showing a laptop screen with a locker and an input field with hashes characters">
-		</div>
         <div class="account">
-            <p>Already have an account? <a href="{{ url_for('login') }}">Log In</a></p>
+            <p>Already have an account? <a href="{{ url_for('login') }}" class="light-blue-text text-accent-4">Log In</a></p>
         </div>
 	</div>
 {% endblock %}
